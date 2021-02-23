@@ -1,0 +1,41 @@
+{
+  "name": "PERC20",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "develop": "ganache-cli -i 5777 -h 0.0.0.0 -p 9545 -m 'candy maple cake sugar pudding cream honey rich smooth crumble sweet treat'"
+  },
+  "keywords": [
+    "ERC20",
+    "Swap",
+    "truffle",
+    "dapp"
+  ],
+  "author": "Wang",
+  "license": "MIT",
+  "devDependencies": {
+    "@openzeppelin/test-environment": "0.1.0-rc.1",
+    "@openzeppelin/test-helpers": "^0.5.4",
+    "chai": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "ganache-cli": "^6.7.0",
+    "mocha": "^6.2.2",
+    "solhint": "^2.3.0",
+    "truffle": "^5.0.41",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "lite-server": "^2.3.0",
+    "chai-as-promised": "^7.1.1",
+    "chai-bignumber": "^2.0.2"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.2.1-solc-0.7",
+    "chai": "^4.2.0",
+    "lite-server": "^2.3.0",
+    "chai-as-promised": "^7.1.1",
+    "chai-bignumber": "^2.0.2"
+  }
+}
