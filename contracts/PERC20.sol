@@ -54,11 +54,21 @@ contract PERC20  is ERC20Capped, ERC20Burnable,ERC20Pausable, TokenRecover, Acce
 
     }
 
-
     function mint(address to, uint256 value) public {
         require(!hasRole(FREEZED_ROLE, to), "Must be whitelisted to recieve token");
         require(hasRole(MINTER_ROLE, msg.sender), "Caller is not a minter");
         _mint(to, value);
+    }
+
+    function batchmint(address[] memory to, uint256[] memory value) public {
+        require(to.length == value.length, "Must equal length");
+        require(hasRole(MINTER_ROLE, msg.sender), "Caller is not a minter");
+
+        for(uint i = 0; i < to.length; i++) {
+            if(hasRole(FREEZED_ROLE, to[i])) continue;
+
+            _mint(to[i], value[i]);
+        }
     }
 
     function burn(uint256 amount) public  
